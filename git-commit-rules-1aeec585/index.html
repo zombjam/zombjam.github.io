@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>關於git commit規範 | ZL's Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1604932303317"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/purecss@1.0.0/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/purecss@1.0.0/build/grids-responsive-min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script type="text/javascript" src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">關於git commit規範</h1><a id="logo" href="/.">ZL's Blog</a><p class="description">紀錄當下</p></div><div id="nav-menu"><a href="/"><i class="fa fa-home"> 首頁</i></a><a href="/archives"><i class="fa fa-archive"> 所有文章</i></a><a href="/about"><i class="fa fa-user"> 關於</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">關於git commit規範</h1><div class="post-meta">2019-07-09<span> | </span><span class="category"><a href="/categories/tools/">工欲善其事</a></span></div><div class="post-content"><p>如何撰寫一個好的 commit message，以及工具使用</p>
+<a id="more"></a>
+
+<h2 id="Git-commit-message-的七條規則"><a href="#Git-commit-message-的七條規則" class="headerlink" title="Git commit message 的七條規則"></a>Git commit message 的七條規則</h2><ol>
+<li>用一行空白行分隔標題與內容</li>
+<li>限制標題最多只有 50 字元</li>
+<li>標題開頭要大寫</li>
+<li>標題不以句點結尾</li>
+<li>以祈使句撰寫標題</li>
+<li>內文每行最多 72 字元</li>
+<li>用內文解釋 <em>what</em> 以及 <em>why</em> v.s. <em>how</em></li>
+</ol>
+<h3 id="1-用一行空白行分隔標題與內容"><a href="#1-用一行空白行分隔標題與內容" class="headerlink" title="1. 用一行空白行分隔標題與內容"></a>1. 用一行空白行分隔標題與內容</h3><p>首先，不是所有的 commit message 都同時需要標題與內文。<br>有時候一行文也很好，尤其是改變很簡單，以至於不需要進一步的脈絡敘述。</p>
+<p>在任何情況下，標題與內文的分隔會在瀏覽 log 的時候看出。</p>
+<h3 id="2-限制標題最多只有-50-字元"><a href="#2-限制標題最多只有-50-字元" class="headerlink" title="2. 限制標題最多只有 50 字元"></a>2. 限制標題最多只有 50 字元</h3><p>讓標題保持在 50 字以下能夠確保標題的可讀性，並強迫作者思考如何用更簡潔的方式表達發生什麼事情。</p>
+<blockquote>
+<p>如果很難總結出標題，這代表你可能在一個 commit 裡面做了太多的改變。請盡量讓 commit 單一化，一次只更動一個主題(atomic commits)。</p>
+</blockquote>
+<h3 id="3-標題開頭要大寫"><a href="#3-標題開頭要大寫" class="headerlink" title="3. 標題開頭要大寫"></a>3. 標題開頭要大寫</h3><p>任何標題的開頭都要大寫。</p>
+<p>舉例而言：</p>
+<ul>
+<li><span style="color:green">Accelerate to 88 miles per hour</span></li>
+</ul>
+<p>而不是：</p>
+<ul>
+<li><span style="color:red">accelerate to 88 miles per hour</span></li>
+</ul>
+<h3 id="4-標題不以句點結尾"><a href="#4-標題不以句點結尾" class="headerlink" title="4. 標題不以句點結尾"></a>4. 標題不以句點結尾</h3><p>結尾的標點符號在標題列是多餘的。此外，當你要遵守<code>50字或以下的規則</code>時，字元空間是很寶貴的。</p>
+<h3 id="5-以祈使句撰寫標題"><a href="#5-以祈使句撰寫標題" class="headerlink" title="5. 以祈使句撰寫標題"></a>5. 以祈使句撰寫標題</h3><p>祈使句有時聽起來有點不禮貌；因此我們並不常使用。<br>但是對於 Git commit 標題來說卻很適合。其中一個理由是因為<strong>Git 本身就是依照你的命令來完成一個動作</strong>。</p>
+<h3 id="6-內文每行最多-72-字"><a href="#6-內文每行最多-72-字" class="headerlink" title="6. 內文每行最多 72 字"></a>6. 內文每行最多 72 字</h3><p>Git 不會把任何文字自動換行。當你在撰寫 commit message 內文的時候，你需要注意左邊的 margin，並且手動將超過 margin 的文字換到下一行。</p>
+<h3 id="7-用內文解釋-what-以及-why-vs-how"><a href="#7-用內文解釋-what-以及-why-vs-how" class="headerlink" title="7. 用內文解釋 what 以及 why vs. how"></a>7. 用內文解釋 what 以及 why vs. how</h3><p>在大多數的情況下，你可以省略掉描述這些變更的細節。程式碼本身就已經能自我說明了 (如果程式碼太複雜，必須要有說明的話，這時候就是程式碼本身的註解啦)。你只需要專注在解釋做出這樣改變的原因 ─ 事情在改變前為什麼可行 (以及他的錯誤)，他們目前運作的狀況，以及為什麼你決定要以這個方法解決問題。</p>
+<br>
+
+<h2 id="Commitizen-是什麼？"><a href="#Commitizen-是什麼？" class="headerlink" title="Commitizen 是什麼？"></a>Commitizen 是什麼？</h2><p>一個格式化 commit message 的工具。</p>
+<h4 id="全域安裝以下三個套件"><a href="#全域安裝以下三個套件" class="headerlink" title="全域安裝以下三個套件"></a>全域安裝以下三個套件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g commitizen</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>生成 changelog 的工具</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i -g conventional-changelog</span><br><span class="line">npm i -g conventional-changelog-cli</span><br></pre></td></tr></table></figure>
+
+<h4 id="檢查是否安裝成功"><a href="#檢查是否安裝成功" class="headerlink" title="檢查是否安裝成功"></a>檢查是否安裝成功</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm ls -g -depth=0</span><br></pre></td></tr></table></figure>
+
+<p>可得到以下結果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/lib</span><br><span class="line">├── commitizen@3.1.1</span><br><span class="line">├── conventional-changelog@3.1.8</span><br><span class="line">├── conventional-changelog-cli@2.0.21</span><br><span class="line">├── hexo-cli@2.0.0</span><br><span class="line">└── npm@6.10.2</span><br></pre></td></tr></table></figure>
+
+<h4 id="package-json-相關設定"><a href="#package-json-相關設定" class="headerlink" title="package.json 相關設定"></a>package.json 相關設定</h4><p>安裝完之後，還需要在<code>package.json</code>設定路徑<br>因套件是裝在全域環境下的，所以可以不需要在專案安裝該套件</p>
+<ul>
+<li>package.json</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...,</span><br><span class="line">  <span class="string">"config"</span>: &#123;</span><br><span class="line">    <span class="string">"commitizen"</span>: &#123;</span><br><span class="line">      <span class="string">"path"</span>: <span class="string">"cz-conventional-changelog"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果使用<strong>NPM 5.2+</strong>，且不想安裝在全域環境中</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx git-cz</span><br></pre></td></tr></table></figure>
+
+<p>執行成功後就會看到以下畫面<br><img src="/images/git-cz.png" alt=""></p>
+<hr>
+<h4 id="閱讀參考"><a href="#閱讀參考" class="headerlink" title="閱讀參考"></a>閱讀參考</h4><ul>
+<li><a href="https://www.jianshu.com/p/d264f88d13a4" target="_blank" rel="noopener">Commitizen 的安装和使用（标准化 Git 的 Commit Message）</a></li>
+<li><a href="https://blog.louie.lu/2017/03/21/%E5%A6%82%E4%BD%95%E5%AF%AB%E4%B8%80%E5%80%8B-git-commit-message/" target="_blank" rel="noopener">如何寫一個 Git Commit Message</a></li>
+<li><a href="https://github.com/commitizen/cz-cli" target="_blank" rel="noopener">cz-cli 官方</a></li>
+</ul>
+</div><span class="tags"><a href="/tags/git/">git</a></span><div class="post-nav"><a class="pre" href="/javascript-hoisting-11da879d/">[筆記] JavaScript的Hoisting</a><a class="next" href="/javascript-global-object-9f77ade/">JS全域物件</a></div><section><div id="gitalk-container"></div></section></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="form u-search-form" name="searchform"><input class="input u-search-input" type="text" name="q" placeholder="Search"/><span class="icon icon-search"></span></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分類</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">工欲善其事</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 標籤</i></div><div class="tagcloud"><a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/Nodejs/" style="font-size: 15px;">Nodejs</a> <a href="/tags/npm/" style="font-size: 15px;">npm</a> <a href="/tags/flutter/" style="font-size: 15px;">flutter</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/package-manage-6ac39b2a/">套件管理工具</a></li><li class="post-list-item"><a class="post-list-link" href="/git-ssh-agent-3191a3b8/">git ssh-agent教學</a></li><li class="post-list-item"><a class="post-list-link" href="/flutter-i18n-translate-869ccd78/">flutter 多國語系設定</a></li><li class="post-list-item"><a class="post-list-link" href="/flutter-json-and-serialization-7dae1368/">flutter JSON與序列化</a></li><li class="post-list-item"><a class="post-list-link" href="/flutter-fetch-data-f25e03ed/">flutter串接資料</a></li><li class="post-list-item"><a class="post-list-link" href="/git-ssh-6efbc176/">管理多個git帳號</a></li><li class="post-list-item"><a class="post-list-link" href="/javascript-hoisting-11da879d/">[筆記] JavaScript的Hoisting</a></li><li class="post-list-item"><a class="post-list-link" href="/git-commit-rules-1aeec585/">關於git commit規範</a></li><li class="post-list-item"><a class="post-list-link" href="/javascript-global-object-9f77ade/">JS全域物件</a></li><li class="post-list-item"><a class="post-list-link" href="/IDE-vscode-update-789c3552/">自動更新vscode失敗</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">ZL's Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var SEARCH_SERVICE = 'hexo';
+var ROOT = '/'|| '/';</script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/app.js?v=0.0.0"></script></div></body></html>
