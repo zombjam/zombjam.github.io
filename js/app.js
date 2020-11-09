@@ -36,7 +36,8 @@ $(function () {
 
   // 渲染 gitalk元件
   var gitalk = new Gitalk({
-    accessToken: '<%= theme.gitalk.accessToken %>',
+    clientID: '<%= theme.gitalk.client_id %>',
+    clientSecret: '<%= theme.gitalk.client_secret %>',
     id: window.location.pathname,
     repo: '<%= theme.gitalk.repo %>',
     owner: '<%= theme.gitalk.owner %>',
