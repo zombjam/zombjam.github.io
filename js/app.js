@@ -34,8 +34,6 @@ $(function () {
     });
   }
 
-  console.log(hexo);
-
   // 渲染 gitalk元件
   var gitalk = new Gitalk({
     clientID: 'f1be2b0af308ecb8e58e',
