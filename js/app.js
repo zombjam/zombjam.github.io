@@ -41,7 +41,7 @@ $(function () {
     id: window.location.pathname,
     repo: 'zombjam.github.io.git',
     owner: 'zombjam',
-    distractionFreeMode: true,
+    distractionFreeMode: false,
   });
   gitalk.render('gitalk-container');
 });
