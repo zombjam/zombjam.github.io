@@ -34,15 +34,16 @@ $(function () {
     });
   }
 
+  console.log(hexo);
+
   // 渲染 gitalk元件
   var gitalk = new Gitalk({
-    clientID: '<%= theme.gitalk.client_id %>',
-    clientSecret: '<%= theme.gitalk.client_secret %>',
+    clientID: 'f1be2b0af308ecb8e58e',
+    clientSecret: 'a497f02da3fcb7c47f4632af23bf616df85c7be8',
     id: window.location.pathname,
-    repo: '<%= theme.gitalk.repo %>',
-    owner: '<%= theme.gitalk.owner %>',
-    admin: '<%= theme.gitalk.admin %>',
-    distractionFreeMode: '<%= theme.gitalk.on %>',
+    repo: 'zombjam.github.io.git',
+    owner: 'zombjam',
+    distractionFreeMode: true,
   });
   gitalk.render('gitalk-container');
 });
